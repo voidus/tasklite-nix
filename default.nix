@@ -14,10 +14,7 @@ let
     sha256 = "kxX5U2lMqRJX9TvYOIdngGEd5zCNqvNGF2IRSLWUAqU=";
   };
   project = pkgs.haskell-nix.project {
-    src = pkgs.haskell-nix.haskellLib.cleanGit {
-      name = "tasklite";
-      src = tasklite-src;
-    };
+    src =  tasklite-src;
 
     modules = [{
       packages.tasklite-core.patches = [ ./nix/dont-get-version-from-git.patch ];
